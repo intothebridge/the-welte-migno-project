@@ -51,6 +51,7 @@ To make it available: I created a symlink in a PATH-directoy but you can also cr
 
 Decide which preset you want to use. To get the correct naming use:
 $ pianoteq --list-presets
+You can change the preset in the global constants within the shell script.
 
 ## Install an id3-tag processor for setting MP3-Metadata
 
