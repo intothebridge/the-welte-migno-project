@@ -1,5 +1,10 @@
 #!/bin/bash
 # (c) ITTB, converts welt-mignon midi-files to mp3 using pianoteq. ID3-tags and file naming based on xml-metadata
+# ATTENTION: this script is not optimized for robustness, it will
+# NOT check if any operation fails
+# NOT verify if files exist
+# NOT check if files are overwritten
+# ... it's simple linear code ....
 
 
 # global definitions
@@ -23,9 +28,6 @@ Metadata[artist]=""
 Metadata[composer]=""
 Metadata[release]=""
 Metadata[genre]="classical"
-
-# testparameter: falls 1 wird keine konversion durchgefuehrt
-NOCONV=0
 
 
 # ===================== function scanfiles ======================================
