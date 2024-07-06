@@ -106,7 +106,7 @@ RETURN=$(echo "$RETURN" | sed "s/[\"\'\`\\\:\/\,\.]//g")
 
 
 # ===================== function logtext ======================================
-# Parameter: Text der ins Logfile geschrieben werden soll
+# Parameter: text to write to logfile
 # function for writing text to logfile
 logtext () {
    echo "`date`: " $1 2>&1 | tee -a $LOGFILE
