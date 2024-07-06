@@ -13,7 +13,7 @@ Pianoteq is also available as free to try - only difference to licensed version 
 
 # Step by Step Howto
 
-## 1. Download the supra dataset from github
+## Download the supra dataset from github
 
 The "supra dataset" is provided by Stanford University, download it from here: https://github.com/pianoroll/SUPRA
 * you need the metadata files (.marcxml) and the midi-files (I recommend taking the "expressive midi" files.
@@ -56,12 +56,34 @@ $ pianoteq --list-presets
 
 Install or make available a id3-processor. I found issueing "apropos id3" on the linux command line that mid3v2 is already installed on my fedora linux workstation, so I am using that (and integrating it into my conversion script).
 
+Here are the index data for the various ID3-attributes:
+
+### Mapping of ID3-Attributes
+
+The following table shows how the metadata (column 1) is identified in the marcxml files. Have a look there. You can modify these settings in the shell script if you wish to:
+
+| Meaning ID3       | Example             | ID3          | XML datafield-tag | XML subfield-code |
+| ---------------- | -------------------- | ------------ | ----------------- | ----------------- |
+| Oeuvre             | Op. 111 Sonate xy    | name, title? | 245               | a, p, c           |
+| Artist         | Teresa Carenno       | artist       | 511 ODER 700      | a                 |
+| Genre            | "classical"          | genre        |                   |                   |
+| Release year | 1905                 | release      | 264               | c                 |
+| Composer        | Ludwig van Beethoven | composer     | 100               | a                 |
+| Album (not set)           | Welte-Mignon         |              | 028               | b
+
 ## Get the Bash-Script doing all the work
 
-Copy my conversion script from github (a single bash file) to your working directory:
+Copy my conversion script from github "midi2piano.sh" (a single bash file) to your working directory:
 
 * set the preset you want to use in the parameters
 
 # Start with test data
 
-To test and time the process, I moved all midi-xml-pairs into a subdir and only left 3 pairs in the working dir to try the process first on these before starting hours of conversion on my laptop.
+To test and time the process, I moved all midi-xml-pairs into a subdir and only left 3 pairs in the working dir to try the process first on these before starting hours of conversion on my laptop. I strongly recommend this process. My laptop worked several hours to get all midi files render to mp3, so having some test data makes sense. Of course you could also open the midi-file in the pianoteq GUI and just listen to it.
+
+# Summary
+
+I really hope this is clear. Leave me a comment in my youtube video if there are any questions or suggestions. I am not fully satisfied with my pianoteq-preset - maybe you want to share yours?
+
+Thanks and enjoy
+intothebridge
