@@ -22,21 +22,41 @@ Be aware that although this work is free, there is a copyright to be mentioned:
 If using this dataset, please cite the following paper:
 Zhengshan Shi, Craig Stuart Sapp, Kumaran Arul, Jerry McBride, Julius O. Smith III. SUPRA: Digitizing the Stanford University Piano Roll Archive. In Proceedings of the 20th International Society for Music Information Retrieval Conference (ISMIR), pages 517-523, Delft, The Netherlands, 2019.
 
-# Prepare your working directory
+## Prepare your working directory
 
 Create one single working folder (for easier processing) and copy all midi and xml files to this folder.
-Doing this give a total of 480 xml files and the same number of midi files.
+Midi and XML-Files are organized into subfolders according to the first letter of the filenames.
+Filenames are kind of IDish, like  "bb988jx6754.marcxml" and "bb988jx6754_exp.mid"
+Doing this give a total of more than 400 xml files and the same number of midi files.
 
-Download "xidel" for xml-Processing
+## Download the XML-Tool "xidel" for xml-Processing
 
-Copy "lame" (/usr/bin/lame) to this working dir - pianoteq needs this for creating mp3s and is looking for it simply in the current folder.
+Xidel is an opensource XML-parser. 
+Xidel is a single binary that you can download for linux or windows from here: https://www.videlibri.de/xidel.html
+I placed xidel into my local directory */home/user/bin*, which is included in the PATH environment.
 
-Make pianoteq-executable available: I created a symlink in a PATH-directoy or create a symlink to pianoteq in your working directory.
+## Copy the lame executable to your working directory
+
+Pianoteq headless requires for converting to mp3 the lame-executable. PATH is not resolved. Pianoteq only looks in the current directory, so I simply copied the binary to the working dir.
+Find out where lame resides by issueing
+@$ which lame@
+which yields on my system: */usr/bin/lame*
+
+## Make the pianoteq-executable available
+
+Happily also pianoteq is a single binary:
+To make it available: I created a symlink in a PATH-directoy but you can also create a symlink to pianoteq in your working directory. For simplified usage I named the symlink "pianoteq".
+
+## Decide which pianoteq preset to use
 
 Decide which preset you want to use. To get the correct naming use:
 $ pianoteq --list-presets
 
-Install or make available a id3-processor. I found issueing "apropos id3" that mid3v2 is installed on my fedora workstation, so I am using that (and integrating it into my conversion script).
+## Install an id3-tag processor for setting MP3-Metadata
+
+Install or make available a id3-processor. I found issueing "apropos id3" on the linux command line that mid3v2 is already installed on my fedora linux workstation, so I am using that (and integrating it into my conversion script).
+
+## Get the Bash-Script doing all the work
 
 Copy my conversion script from github (a single bash file) to your working directory:
 
