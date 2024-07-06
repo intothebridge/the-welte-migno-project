@@ -13,10 +13,14 @@ Pianoteq is also available as free to try - only difference to licensed version 
 
 # Step by Step Howto
 
-# Get the supra dataset
+## 1. Download the supra dataset from github
 
 The "supra dataset" is provided by Stanford University, download it from here: https://github.com/pianoroll/SUPRA
 * you need the metadata files (.marcxml) and the midi-files (I recommend taking the "expressive midi" files.
+
+Be aware that although this work is free, there is a copyright to be mentioned:
+If using this dataset, please cite the following paper:
+Zhengshan Shi, Craig Stuart Sapp, Kumaran Arul, Jerry McBride, Julius O. Smith III. SUPRA: Digitizing the Stanford University Piano Roll Archive. In Proceedings of the 20th International Society for Music Information Retrieval Conference (ISMIR), pages 517-523, Delft, The Netherlands, 2019.
 
 # Prepare your working directory
 
