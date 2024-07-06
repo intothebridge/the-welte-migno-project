@@ -69,7 +69,18 @@ The following table shows how the metadata (column 1) is identified in the marcx
 | Genre            | "classical"          | genre        |                   |                   |
 | Release year | 1905                 | release      | 264               | c                 |
 | Composer        | Ludwig van Beethoven | composer     | 100               | a                 |
-| Album (not set)           | Welte-Mignon         |              | 028               | b
+| Album (not set)           | Welte-Mignon         |              | 028               | b|
+
+Remark: I finally used the 4-letter IDs used by ID3 to set the desired attributes
+
+## Filename composition
+
+As the original filenames are useless, the script generates a new filename based on this schema:
+*composer* *oeuvre* *artist* *relase year*.mp3
+
+The logic is to give a reasonable filename sorting in the filemanager. I find the release year very important as this show directly how old the recording actually is.
+
+You could change this schema very simple in the shell script:
 
 ## Get the Bash-Script doing all the work
 
