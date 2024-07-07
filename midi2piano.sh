@@ -73,7 +73,7 @@ scanfiles () {
    logtext "setting filename from _exp-midi files (adding _exp!)"
    midifile="$OUTFILE""_exp.mid"
    logtext "converting $midifile to mp3"
-   time pianoteq --headless --midi $midifile --mp3 $OUTFILE.mp3 --preset "My Presets/SteinwayWelte"
+   time pianoteq --headless --midi $midifile --mp3 $OUTFILE.mp3 --preset "$PRESET"
    logtext "conversion done!"
    filename="${Metadata[composer]} ${Metadata[song]} ${Metadata[artist]} ${Metadata[release]}.mp3"
    logtext "target filename: $filename"
